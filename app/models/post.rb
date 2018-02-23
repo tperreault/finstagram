@@ -18,6 +18,9 @@ class Post < ActiveRecord::Base
         elsif
         time_ago_in_minutes >=60
             "#{(time_ago_in_minutes / 60).to_i} hours ago"
+        elsif
+        time_ago_in_minutes <1
+            "Less than a minute ago"
         else
             "#{time_ago_in_minutes.to_i} minutes ago"
         end
